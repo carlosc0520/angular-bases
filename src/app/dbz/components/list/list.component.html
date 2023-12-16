@@ -1,0 +1,16 @@
+<h3>Listado</h3>
+<ul class="list-group">
+  <li
+    *ngFor="let personaje of personajesList; index as i"
+    [ngClass]="{'list-group-item-dark': i == 0 }"
+    class="list-group-item">
+    {{i + 1}}.- {{ personaje.name }} - Power: {{ personaje.power }}
+
+    <span *ngIf="personaje.power > 9000"
+      class="badge text-bg-danger badge-success">Super Saiyan</span>
+
+    <button
+      (click)="borrar(personaje.id)"
+      class="btn btn-danger btn-sm">X</button>
+  </li>
+</ul>

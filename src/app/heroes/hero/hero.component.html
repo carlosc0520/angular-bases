@@ -1,0 +1,37 @@
+<h1>hero works!</h1>
+
+<dl>
+  <td>Nombre:</td>
+  <dd> {{name}}</dd>
+
+  <td>Edad:</td>
+  <dd> {{age}}</dd>
+
+  <td>Método:</td>
+  <dd> {{getHeroDescription()}}</dd>
+
+  <td>Capitalizado:</td>
+  <dd> {{capitalizeName}}</dd>
+</dl>
+
+<div class="d-flex gap-2">
+  <button
+    class="btn btn-primary"
+    (click)="setName('Nuevo Nombre')"
+    *ngIf="name !== 'Nuevo Nombre'">
+    Cambiar Nombre
+  </button>
+
+  <button
+    *ngIf="age !== 99"
+    class="btn btn-primary"
+    (click)="setAge(99)">
+    Cambiar Edad
+  </button>
+
+  <button
+    class="btn btn-primary"
+    (click)="resetHero()">
+    resetear
+  </button>
+</div>
